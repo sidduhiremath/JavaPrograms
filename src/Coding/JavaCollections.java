@@ -1,39 +1,45 @@
 package Coding;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
-public class JavaCollections {
+public class JavaList {
 
 	public static void main(String[] args) {
-		List<Integer> num=new ArrayList<Integer>();
-// To add the Elements		
-		for(int i=0;i<5;i++) {
+		List<Integer> num = new ArrayList<Integer>();
+//		To add the elements to list"
+		for (int i = 0; i <= 4; i++) {
 			num.add(i);
 		}
-// To get the Size of the List
-	int size=	num.size();
-	System.out.println(size);
-// To Print the elements with Iterator
-		Iterator<Integer> i=num.iterator();
-		while(i.hasNext()) {
-		System.out.println(i.next());
-		}
-// To sort the element
-		Collections.sort(num);
+//		To add the elements to list to the specific location
+		num.add(5, 9); //num.add(Index,value)
 		
-// To print the elements with For each loop
-		for(Integer e:num) {
-			System.out.println(e);
-		}
+//		To verify whether element is present or not
+		System.out.println("Element 9 is Present..?: "+num.contains(9));
+		
+//		To get the element from specific position
+		System.out.println("Element at 4th position: "+num.get(4));
+		
+//		To get the size of the List
+		System.out.println("Size of the List is: "+num.size());
 	
-// To remove the Elements
-		num.remove(0);
-		for(Integer e:num) {
-			System.out.println(e);
+//		To print the elements from the list with Iterator class
+		Iterator<Integer> itr=num.iterator();
+		System.out.println("Elements are");
+		while(itr.hasNext()) {
+		System.out.println(itr.next());
 		}
+		
+//		To remove the elements from Specific position
+		System.out.println("Element removed from 4th position: "+num.remove(2));
+		
+//		To print the elements from the list with for each loop
+		System.out.println("Elements after removal");
+		for(int n:num) {
+			System.out.println(n);
+		}
+
 	}
 
 }
